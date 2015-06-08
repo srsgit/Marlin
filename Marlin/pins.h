@@ -1198,7 +1198,7 @@
 
 #define LED_PIN            -1
 
-#define FAN_PIN            4
+#define FAN_PIN            4  // PWM on expansion
  #if FAN_PIN == 12 || FAN_PIN ==13
   #define FAN_SOFT_PWM
 #endif
@@ -1211,7 +1211,7 @@
 #ifdef STB
  #define FAN_PIN            4
   //  Uncomment this if you have the first generation (V1.10) of STBs board
- #define LCD_PIN_BL         17 // LCD backlight LED
+ #define LCD_PIN_BL         -1 // LCD backlight LED
 #endif
 
 #ifdef AZTEEG_X1
@@ -1252,6 +1252,7 @@
  #ifdef LCD_I2C_PANELOLU2
    #define FAN_PIN          4 // Uses Transistor1 (PWM) on Panelolu2's Sanguino Adapter Board to drive the fan
  #endif
+ #define FAN_PIN           4
 
 #else
 
@@ -1276,12 +1277,12 @@
  #ifdef ULTRA_LCD
    #ifdef NEWPANEL
      //we have no buzzer installed
-     #define BEEPER -1
+     #define BEEPER 28 // A3 on expansion
      //LCD Pins
      #ifdef DOGLCD
        // Pins for DOGM SPI LCD Support
-       #define DOGLCD_A0  30
-       #define DOGLCD_CS  29
+       #define DOGLCD_A0  25
+       #define DOGLCD_CS  17
        // GLCD features
        #define LCD_CONTRAST 1
        // Uncomment screen orientation
@@ -1289,7 +1290,12 @@
          // #define LCD_SCREEN_ROT_90
        #define LCD_SCREEN_ROT_180
          // #define LCD_SCREEN_ROT_270
-       #else // standard Hitachi LCD controller
+
+       #define LCD_PINS_RS        29
+       #define LCD_PINS_ENABLE    17
+       #define LCD_PINS_D4        25
+
+     #else // standard Hitachi LCD controller
        #define LCD_PINS_RS        4
        #define LCD_PINS_ENABLE    17
        #define LCD_PINS_D4        30
@@ -1311,7 +1317,7 @@
        #define BTN_ENC 16  //the click switch
      #endif //Panelolu2
      //not connected to a pin
-     #define SDCARDDETECT -1
+     #define SDCARDDETECT 27
 
    #endif //Newpanel
  #endif //Ultipanel
