@@ -1277,7 +1277,7 @@
  #ifdef ULTRA_LCD
    #ifdef NEWPANEL
      //we have no buzzer installed
-     #define BEEPER 28 // A3 on expansion
+     #define BEEPER -1 // A3 on expansion
      //LCD Pins
      #ifdef DOGLCD
        // Pins for DOGM SPI LCD Support
@@ -1288,12 +1288,12 @@
        // Uncomment screen orientation
          // #define LCD_SCREEN_ROT_0
          // #define LCD_SCREEN_ROT_90
-       #define LCD_SCREEN_ROT_180
+         #define LCD_SCREEN_ROT_180
          // #define LCD_SCREEN_ROT_270
 
        #define LCD_PINS_RS        29
        #define LCD_PINS_ENABLE    17
-       #define LCD_PINS_D4        25
+       #define LCD_PINS_D4        30
 
      #else // standard Hitachi LCD controller
        #define LCD_PINS_RS        4

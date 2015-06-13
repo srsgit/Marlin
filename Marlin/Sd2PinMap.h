@@ -132,7 +132,7 @@ uint8_t const SDA_PIN = 17;  // C1
 uint8_t const SCL_PIN = 18;  // C2
 
 // SPI port
-uint8_t const SS_PIN = 4;    // B4
+uint8_t const SS_PIN = 31;    // B4
 uint8_t const MOSI_PIN = 5;  // B5
 uint8_t const MISO_PIN = 6;  // B6
 uint8_t const SCK_PIN = 7;   // B7
